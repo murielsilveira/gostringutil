@@ -2,7 +2,7 @@ package gostringutil
 
 import "testing"
 
-func AssertReverse(t *testing.T, input, got, expected string)  {
+func assertReverse(t *testing.T, input, got, expected string)  {
   if got != expected {
     t.Errorf("Reverse(%q) == %q, expected %q", input, got, expected)
   }
@@ -14,7 +14,7 @@ func TestSimpleReverse(t *testing.T) {
 
   got := Reverse(input)
 
-  AssertReverse(t, input, got, expected)
+  assertReverse(t, input, got, expected)
 }
 
 func TestWithChineseCharacters(t *testing.T) {
@@ -23,7 +23,7 @@ func TestWithChineseCharacters(t *testing.T) {
 
   got := Reverse(input)
 
-  AssertReverse(t, input, got, expected)
+  assertReverse(t, input, got, expected)
 }
 
 func TestWithASingleCharacter(t *testing.T) {
@@ -32,7 +32,7 @@ func TestWithASingleCharacter(t *testing.T) {
 
   got := Reverse(input)
 
-  AssertReverse(t, input, got, expected)
+  assertReverse(t, input, got, expected)
 }
 
 func TestWithEmptyString(t *testing.T) {
@@ -40,7 +40,7 @@ func TestWithEmptyString(t *testing.T) {
 
   got := Reverse(input)
 
-  AssertReverse(t, input, got, input)
+  assertReverse(t, input, got, input)
 }
 
 func TestReverseWithAllCases(t *testing.T) {
@@ -53,6 +53,6 @@ func TestReverseWithAllCases(t *testing.T) {
 
   for _, c := range cases {
     got := Reverse(c.input)
-    AssertReverse(t, c.input, got, c.expected)
+    assertReverse(t, c.input, got, c.expected)
   }
 }
