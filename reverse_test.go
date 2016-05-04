@@ -3,7 +3,7 @@ package gostringutil
 import "testing"
 
 func TestReverse(t *testing.T) {
-  input := "!oG olleG"
+  input := "!oG olleH"
   expected := "Hello Go!"
 
   got := Reverse(input)
